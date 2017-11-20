@@ -19,15 +19,22 @@
       super(props);
       this.state = { isMusicPlaying: false };
     }
-
+    handleClick() {
+      if (this.state.isMusicPlaying) {
+        this.setState({ isMusicPlaying: false });
+      } else {
+        this.setState({ isMusicPlaying: true });
+      }
+    };
     render() {
       return (
         <div>
-          <PlayButton />
+          <PlayButton isMusicPlaying={this.state.isMusicPlaying} />
         </div>
       );
     }
   }
+
 
   const placeWeWantToPutComponent = document.getElementById('hook');
   ReactDOM.render(<Container />, placeWeWantToPutComponent);
