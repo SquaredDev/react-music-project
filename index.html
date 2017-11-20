@@ -15,6 +15,11 @@
     return <a href="#" title="Play video" className="play" />;
   }
   class Container extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { isMusicPlaying: false };
+    }
+
     render() {
       return (
         <div>
@@ -26,5 +31,5 @@
 
   const placeWeWantToPutComponent = document.getElementById('hook');
   ReactDOM.render(<Container />, placeWeWantToPutComponent);
-  
+
 </script>
